@@ -34,22 +34,9 @@ class BallBrokenFloorTest {
 					min = middle;
 					}
 				right = middle - 1;
-				
 			}
 		}
-		System.out.println(min);
-		System.out.println(bbf.getBrokenFloor());
 			return min;
 		}
 	
-//		while (i < N_FLOORS && res == -1) {
-//			try{
-//				bbf.checkFloor(i);
-//				i++;
-//			}catch(Exception e){
-//				res = i;
-//			}
-//		}
-			
-
 }
