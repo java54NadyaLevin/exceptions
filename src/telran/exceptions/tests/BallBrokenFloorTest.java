@@ -19,24 +19,20 @@ class BallBrokenFloorTest {
 	private int getMinBrokenFloor(BallBrokenFloor bbf) throws Exception {
 		int right = N_FLOORS - 1;
 		int left = 0;
-		int min = N_FLOORS;
-		int max = 0;
-		
-		while (right >= 0 && min - max > 1){
-			int middle = (left+right)/2;
+		int middle = (left+right)/2;
+		int res = -1;
+	
+		while(left <= right) {
 			try {
 				bbf.checkFloor(middle);
 				left = middle + 1;
-				max = middle;
-				
-			} catch (Exception e) {
-				if(min > middle) {
-					min = middle;
-					}
+			} catch (Exception e){
 				right = middle - 1;
+				res = middle;
 			}
+			middle = (left + right) / 2;
 		}
-			return min;
-		}
+		return res;
+	}
 	
 }
